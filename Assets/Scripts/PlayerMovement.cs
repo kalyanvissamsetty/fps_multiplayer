@@ -28,4 +28,12 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("BlendH", Input.GetAxis("Horizontal"));
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            rb.AddForce(Vector3.up * 700 * Time.deltaTime, ForceMode.VelocityChange);
+        }
+    }
+
 }
